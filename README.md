@@ -21,8 +21,14 @@ next example scripts only `test` and `lint` commands will be listed:
 
 ## Installation
 
+Locall:
+
 ```shell
 npm i -D npm-package-user-scripts-list
+```
+Or global:
+```shell
+npm i -g npm-package-user-scripts-list
 ```
 
 ## Usage
@@ -41,6 +47,13 @@ From commandline:
 npm-package-user-scripts-list
 ```
 
+Add command shortcut to `package.json`:
+```json
+  "scripts": {
+    "help": "echo --List all available script commands-- && npm-package-user-scripts-list"
+  }
+```
+
 ## See also
 
-- [GUI interface](https://github.com/lilliputten/npm-package-user-scripts-list)
+- [GUI interface](https://github.com/lilliputten/npm-package-user-scripts-gui)

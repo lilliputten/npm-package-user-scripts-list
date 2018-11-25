@@ -1,6 +1,6 @@
 {
   "name": "npm-package-user-scripts-list",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "List all available npm script commands",
   "author": "lilliputten <igor@lilliputten.ru>",
   "license": "MIT",
