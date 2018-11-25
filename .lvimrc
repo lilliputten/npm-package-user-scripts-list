@@ -1,8 +1,4 @@
 " vim: ft=vim
 let g:ale_linters = {
 \   'javascript': [ 'eslint' ],
-\   'typescript': [ 'tsserver' ],
 \}
-
-" \   'typescript': [ 'tslint' ],
-" \   'typescript': [ 'tsserver' ],

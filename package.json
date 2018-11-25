@@ -2,30 +2,37 @@
   "name": "npm-package-user-scripts-list",
   "version": "0.0.1",
   "description": "List all available npm script commands",
+  "author": "lilliputten <igor@lilliputten.ru>",
+  "license": "MIT",
   "main": "index.js",
+  "bin": "./cli.js",
+  "homepage": "https://github.com/lilliputten/npm-package-user-scripts-list#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lilliputten/npm-package-user-scripts-list.git"
   },
   "keywords": [
-    "npm.",
-    "script",
+    "npm",
+    "run",
     "package",
-    "run"
+    "scripts"
   ],
-  "author": "lilliputten <igor@lilliputten.ru>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lilliputten/npm-package-user-scripts-list/issues"
   },
-  "homepage": "https://github.com/lilliputten/npm-package-user-scripts-list#readme",
   "dependencies": {
     "chalk": "^2.4.1"
   },
-  "bin": {
-    "npm-package-user-scripts-list": "./cli.js"
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0"
   },
   "scripts": {
-    "test": "echo --Test source code-- && echo \"Error: no test specified\" && exit 1"
+    "command": "echo Commands without first special (--) echo not listed",
+    "command-SAMPLE": "echo --Sample command (not listed)--",
+    "command-UNUSED": "echo --Unused command (not listed)--",
+    "lint": "echo --Lint source code-- && eslint . --ext .js && echo --No JS problems found--",
+    "test": "echo --Test source code-- && jest"
   }
 }
