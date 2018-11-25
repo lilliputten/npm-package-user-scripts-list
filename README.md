@@ -21,7 +21,7 @@ next example scripts only `test` and `lint` commands will be listed:
 
 ## Installation
 
-Locall:
+For current project:
 
 ```shell
 npm i -D npm-package-user-scripts-list
