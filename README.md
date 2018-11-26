@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/npm-package-user-scripts-list.svg)](https://badge.fury.io/js/npm-package-user-scripts-list)
+
 # npm-package-user-scripts-list
 
 List all available npm script commands listed in `scripts` section of
