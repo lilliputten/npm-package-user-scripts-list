@@ -52,12 +52,11 @@
   },
   "npm-package-user-scripts": {
     "__default__": {
-      "showConsole": false
+      "someCommonParameter": true
     },
     "npm-package-user-scripts-command": {
       "title": "Command from `npm-package-user-scripts` section",
-      "cmd": "echo Overrided command",
-      "showConsole": true
+      "cmd": "echo Overrided command"
     }
   },
   "scripts": {

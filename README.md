@@ -12,12 +12,12 @@ next example scripts only `test` and `lint` commands will be listed:
 ```json
   "npm-package-user-scripts": {
     "__default__": {
-      "showConsole": false
+      "someCommonParameter": true
     },
     "npm-package-user-scripts-command": {
       "title": "Command from `npm-package-user-scripts` section",
       "cmd": "echo Overrided command",
-      "showConsole": true
+      "someCommonParameter": true
     }
   },
   "scripts": {
