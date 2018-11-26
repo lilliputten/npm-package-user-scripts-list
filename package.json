@@ -1,6 +1,6 @@
 {
   "name": "npm-package-user-scripts-list",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "index.js",
   "bin": "./cli.js",
   "description": "List all available npm script commands",
@@ -24,14 +24,47 @@
     "chalk": "^2.4.1"
   },
   "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.9.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/(!.*)/"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/(!.*)/"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverage": false,
+    "verbose": false
+  },
+  "npm-package-user-scripts": {
+    "__default__": {
+      "showConsole": false
+    },
+    "npm-package-user-scripts-command": {
+      "title": "Command from `npm-package-user-scripts` section",
+      "cmd": "echo Overrided command",
+      "showConsole": true
+    }
+  },
   "scripts": {
-    "command": "echo Commands without first special (--) echo not listed",
-    "command-SAMPLE": "echo --Sample command (not listed)--",
-    "command-UNUSED": "echo --Unused command (not listed)--",
+    "skipped-command": "echo Commands without first special (--) echo are skipped",
+    "npm-package-user-scripts-command": "echo Commands present in `npm-package-user-scripts` section are used",
+    "command-SAMPLE": "echo --Sample command (not used)--",
+    "command-UNUSED": "echo --Unused command (not used)--",
     "lint": "echo --Lint source code-- && eslint . --ext .js && echo --No JS problems found--",
     "test": "echo --Run tests-- && jest"
   }

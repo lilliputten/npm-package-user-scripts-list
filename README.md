@@ -10,10 +10,21 @@ Excluded commands with keys ends with `*-UNUSED` or `*-SAMPLE` strings, eg for
 next example scripts only `test` and `lint` commands will be listed:
 
 ```json
+  "npm-package-user-scripts": {
+    "__default__": {
+      "showConsole": false
+    },
+    "npm-package-user-scripts-command": {
+      "title": "Command from `npm-package-user-scripts` section",
+      "cmd": "echo Overrided command",
+      "showConsole": true
+    }
+  },
   "scripts": {
-    "command": "echo Commands without first special (--) echo not listed",
-    "command-SAMPLE": "echo --Sample command (not listed)--",
-    "command-UNUSED": "echo --Unused command (not listed)--",
+    "skipped-command": "echo Commands without first special (--) echo are skipped",
+    "npm-package-user-scripts-command": "echo Commands present in `npm-package-user-scripts` section are used",
+    "command-SAMPLE": "echo --Sample command (not used)--",
+    "command-UNUSED": "echo --Unused command (not used)--",
     "lint": "echo --Lint source code-- && eslint . --ext .js && echo --No JS problems found--",
     "test": "echo --Run tests-- && jest"
   }
@@ -43,7 +54,7 @@ const scriptCommands = scriptsList.getScripts();
 
 // Print to console
 Object.keys(scriptCommands).map((id) => {
-  console.log(id + ':', scriptCommands[id].title);
+  console.log(id, scriptCommands[id].title);
 });
 ```
 

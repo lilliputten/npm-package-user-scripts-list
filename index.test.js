@@ -9,7 +9,7 @@ describe('npm-package-user-scripts-list', () => {
     expect(typeof scriptsList.getScripts).toEqual('function');
   });
 
-  /** describe getScripts ** {{{
+  /** describe ** {{{ getScripts
    */
   describe('getScripts', () => {
 
@@ -20,35 +20,61 @@ describe('npm-package-user-scripts-list', () => {
       expect(typeof scriptCommands).toEqual('object');
     });
 
-    /** describe returned scripts list object ** {{{
+    /** describe ** {{{ returned data
      */
-    describe('returned scripts list object', () => {
+    describe('returned data', () => {
 
-      it('must contain `test` key', () => {
-        expect(typeof scriptCommands.test).toBe('object');
+      it('must match snapshot', () => {
+        expect(scriptCommands).toMatchSnapshot();
       });
 
-      it('command must contain `title` property', () => {
-        expect(typeof scriptCommands.test.title).toBe('string');
-      });
+      /** describe ** {{{ key details
+       */
+      describe('key details', () => {
 
-      it('must be correct `test` key value', () => {
-        // Values from `package.json` to compare with returned by `getScripts`...
-        const pkgScripts = require('./package.json').scripts;
-        expect(pkgScripts.test).toContain('echo --' + scriptCommands['test'].title + '--');
-      });
+        it('must contain `test` key', () => {
+          expect(typeof scriptCommands.test).toBe('object');
+        });
 
-      it('must not include only commands starts with `echo --*--`', () => {
-        expect(scriptCommands['command']).toBeUndefined();
-      });
+        it('command must contain `title` property', () => {
+          expect(typeof scriptCommands.test.title).toBe('string');
+        });
 
-      it('must not include `*UNUSED` scriptCommands', () => {
-        expect(scriptCommands['test-command-UNUSED']).toBeUndefined();
-      });
+        it('must be correct `test` key value', () => {
+          const pkgScripts = require('./package.json').scripts;
+          // Values from `package.json` to compare with returned by `getScripts`...
+          expect(pkgScripts.test).toContain('echo --' + scriptCommands['test'].title + '--');
+        });
 
-      it('must not include `*SAMPLE` scriptCommands', () => {
-        expect(scriptCommands['test-command-SAMPLE']).toBeUndefined();
-      });
+      });/*}}}*/
+
+      /** describe ** {{{ included/excluded commands
+       */
+      describe('included/excluded commands', () => {
+
+        it('must include commands from `npm-package-user-scripts` section', () => {
+          expect(scriptCommands['npm-package-user-scripts-command']).toBeDefined();
+        });
+
+        it('must override commands for `npm-package-user-scripts` section items', () => {
+          const pkgUserScripts = require('./package.json')['npm-package-user-scripts'];
+          // Values from `package.json` to compare with returned by `getScripts`...
+          expect(scriptCommands['npm-package-user-scripts-command'].cmd).toEqual(pkgUserScripts['npm-package-user-scripts-command'].cmd);
+        });
+
+        it('must include commands starts with `echo --*--`', () => {
+          expect(scriptCommands['command']).toBeUndefined();
+        });
+
+        it('must not include `*UNUSED` scriptCommands', () => {
+          expect(scriptCommands['test-command-UNUSED']).toBeUndefined();
+        });
+
+        it('must not include `*SAMPLE` scriptCommands', () => {
+          expect(scriptCommands['test-command-SAMPLE']).toBeUndefined();
+        });
+
+      });/*}}}*/
 
     });/*}}}*/
 
