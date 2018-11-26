@@ -1,13 +1,20 @@
 # npm-package-user-scripts-list
 
 List all available npm script commands listed in `scripts` section of
-`package.json`.
+`package.json` located in current (usually project root) folder.
 
 Lists only items preceeded by `echo --<Some description text>-- && <...>`
-commands.
+commands from `scripts` section or any items with `title` property from
+`npm-package-user-scripts` section. `npm-package-user-scripts` section also may
+contain special *default* item (with id `__default__`, if not redefined in
+options parameter; TODO).
 
-Excluded commands with keys ends with `*-UNUSED` or `*-SAMPLE` strings, eg for
-next example scripts only `test` and `lint` commands will be listed:
+Commands with keys ends with `*-UNUSED` or `*-SAMPLE` strings are excluded.
+
+In next example commands `command-SAMPLE`, `command-UNUSED` and
+`skipped-command` are ignored, `npm-package-user-scripts-command` uses `echo
+Overrided command` (which specified in `npm-package-user-scripts` section) and
+all commands has `someCommonParameter` property:
 
 ```json
   "npm-package-user-scripts": {
