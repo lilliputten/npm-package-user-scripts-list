@@ -14,7 +14,7 @@ const path = require('path');
  * @param {String} [props.defaultObjectId="__default__"]
  * @return {Object} - Return all npm script commands (in hash: `[{ cmd, title, ... }]`
  */
-function getScripts({ specialMark, defaultObjectId }={}){
+function getScripts({ specialMark, defaultObjectId } = {}){
 
   const packageFilename = path.join(process.cwd(), 'package.json');
 
