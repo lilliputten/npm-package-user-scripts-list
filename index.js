@@ -23,7 +23,7 @@ module.exports.getScripts = function(){
       const cmd = commandsData[key];
       const reg = cmd && cmd.match(/^echo\s+--(.*?)--/);
       if (reg && reg[1]) {
-        scriptCommands[key] = reg[1];
+        scriptCommands[key] = { title: reg[1] };
       }
       return scriptCommands;
     }, {})

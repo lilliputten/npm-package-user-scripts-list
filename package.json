@@ -1,11 +1,11 @@
 {
   "name": "npm-package-user-scripts-list",
-  "version": "0.0.4",
-  "description": "List all available npm script commands",
-  "author": "lilliputten <igor@lilliputten.ru>",
-  "license": "MIT",
+  "version": "0.1.1",
   "main": "index.js",
   "bin": "./cli.js",
+  "description": "List all available npm script commands",
+  "author": "lilliputten <igor@lilliputten.ru> (http://lilliputten.ru)",
+  "license": "MIT",
   "homepage": "https://github.com/lilliputten/npm-package-user-scripts-list#readme",
   "repository": {
     "type": "git",
@@ -33,6 +33,6 @@
     "command-SAMPLE": "echo --Sample command (not listed)--",
     "command-UNUSED": "echo --Unused command (not listed)--",
     "lint": "echo --Lint source code-- && eslint . --ext .js && echo --No JS problems found--",
-    "test": "echo --Test source code-- && jest"
+    "test": "echo --Run tests-- && jest"
   }
 }

@@ -1,7 +1,7 @@
 /* eslint-env jest */
 // @see https://jest-bot.github.io/jest/docs/using-matchers.html
 
-const scriptsList = require('./');
+const scriptsList = require('./index');
 
 describe('npm-package-user-scripts-list', () => {
 
@@ -25,13 +25,17 @@ describe('npm-package-user-scripts-list', () => {
     describe('returned scripts list object', () => {
 
       it('must contain `test` key', () => {
-        expect(typeof scriptCommands.test).toBe('string');
+        expect(typeof scriptCommands.test).toBe('object');
+      });
+
+      it('command must contain `title` property', () => {
+        expect(typeof scriptCommands.test.title).toBe('string');
       });
 
       it('must be correct `test` key value', () => {
         // Values from `package.json` to compare with returned by `getScripts`...
         const pkgScripts = require('./package.json').scripts;
-        expect(pkgScripts.test).toContain('echo --' + scriptCommands['test'] + '--');
+        expect(pkgScripts.test).toContain('echo --' + scriptCommands['test'].title + '--');
       });
 
       it('must not include only commands starts with `echo --*--`', () => {

@@ -15,7 +15,7 @@ next example scripts only `test` and `lint` commands will be listed:
     "command-SAMPLE": "echo --Sample command (not listed)--",
     "command-UNUSED": "echo --Unused command (not listed)--",
     "lint": "echo --Lint source code-- && eslint . --ext .js && echo --No JS problems found--",
-    "test": "echo --Test source code-- && jest"
+    "test": "echo --Run tests-- && jest"
   }
 ```
 
@@ -40,6 +40,11 @@ const scriptsList = require('npm-package-user-scripts-list');
 
 // Get script commands
 const scriptCommands = scriptsList.getScripts();
+
+// Print to console
+Object.keys(scriptCommands).map((id) => {
+  console.log(id + ':', scriptCommands[id].title);
+});
 ```
 
 From commandline:
