@@ -73,3 +73,9 @@ Add command shortcut to `package.json`:
 ## See also
 
 - [GUI interface](https://github.com/lilliputten/npm-package-user-scripts-gui)
+
+---
+
+<!--
+@version 2018.11.26, 19:15
+-->

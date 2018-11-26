@@ -26,6 +26,6 @@ console.info('\nAvailable commands (for ' + chalk.underline('npm run -s <cmd>') 
 
 commandKeys
   .map((key) => {
-    console.info('  ' + chalk.green(key) + ': ' + scriptCommands[key].text);
+    console.info('  ' + chalk.green(key) + ': ' + scriptCommands[key].title);
   })
 ;
