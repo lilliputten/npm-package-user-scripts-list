@@ -1,6 +1,6 @@
 {
   "name": "npm-package-user-scripts-list",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "index.js",
   "bin": "./cli.js",
   "description": "List all available npm script commands",
@@ -60,11 +60,12 @@
     }
   },
   "scripts": {
-    "skipped-command": "echo Commands without first special (--) echo are skipped",
-    "npm-package-user-scripts-command": "echo Commands present in `npm-package-user-scripts` section are used",
+    "skipped-command": "echo Commands without leading `echo --*--` are skipped (if not listed in `npm-package-user-scripts` section -- see next command)",
+    "npm-package-user-scripts-command": "echo Commands present in `npm-package-user-scripts` section (with `title` property) are used",
     "command-SAMPLE": "echo --Sample command (not used)--",
     "command-UNUSED": "echo --Unused command (not used)--",
     "lint": "echo --Lint source code-- && eslint . --ext .js && echo --No JS problems found--",
-    "test": "echo --Run tests-- && jest"
+    "test": "echo --Run tests-- && jest",
+    "help": "echo --List all available script commands (autotest)-- && node ./cli.js"
   }
 }

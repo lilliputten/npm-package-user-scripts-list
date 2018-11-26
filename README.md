@@ -16,17 +16,17 @@ next example scripts only `test` and `lint` commands will be listed:
     },
     "npm-package-user-scripts-command": {
       "title": "Command from `npm-package-user-scripts` section",
-      "cmd": "echo Overrided command",
-      "someCommonParameter": true
+      "cmd": "echo Overrided command"
     }
   },
   "scripts": {
-    "skipped-command": "echo Commands without first special (--) echo are skipped",
-    "npm-package-user-scripts-command": "echo Commands present in `npm-package-user-scripts` section are used",
+    "skipped-command": "echo Commands without leading `echo --*--` are skipped (if not listed in `npm-package-user-scripts` section -- see next command)",
+    "npm-package-user-scripts-command": "echo Commands present in `npm-package-user-scripts` section (with `title` property) are used",
     "command-SAMPLE": "echo --Sample command (not used)--",
     "command-UNUSED": "echo --Unused command (not used)--",
     "lint": "echo --Lint source code-- && eslint . --ext .js && echo --No JS problems found--",
-    "test": "echo --Run tests-- && jest"
+    "test": "echo --Run tests-- && jest",
+    "help": "echo --List all available script commands (autotest)-- && node ./cli.js"
   }
 ```
 
