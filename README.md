@@ -58,7 +58,7 @@ Object.keys(scriptCommands).map((id) => {
 });
 ```
 
-From commandline:
+From shell command line:
 ```shell
 npm-package-user-scripts-list
 ```
@@ -68,6 +68,18 @@ Add command shortcut to `package.json`:
   "scripts": {
     "help": "echo --List all available script commands-- && npm-package-user-scripts-list"
   }
+```
+
+Sample command line line result:
+```shell
+$ npm-package-user-scripts-list
+
+Available commands (for npm run -s <cmd>):
+
+  npm-package-user-scripts-command: Command from `npm-package-user-scripts` section
+  lint: Lint source code
+  test: Run tests
+  help: List all available script commands (autotest)
 ```
 
 ## See also

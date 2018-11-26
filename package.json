@@ -1,6 +1,6 @@
 {
   "name": "npm-package-user-scripts-list",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "index.js",
   "bin": "./cli.js",
   "description": "List all available npm script commands",
