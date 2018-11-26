@@ -59,7 +59,7 @@ const scriptsList = require('npm-package-user-scripts-list');
 // Get script commands
 const scriptCommands = scriptsList.getScripts();
 
-// Print to console
+// Print command names to console
 Object.keys(scriptCommands).map((id) => {
   console.log(id, scriptCommands[id].title);
 });
@@ -94,5 +94,5 @@ Available commands (for npm run -s <cmd>):
 - [GUI interface standalone script](https://github.com/lilliputten/npm-package-user-scripts-gui)
 
 <!--
-@version 2018.11.26, 19:15
+@version 2018.11.26, 19:42
 -->
