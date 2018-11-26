@@ -42,11 +42,11 @@ all commands has `someCommonParameter` property:
 For current project:
 
 ```shell
-npm i -D npm-package-user-scripts-list
+$ npm i -S npm-package-user-scripts-list
 ```
 Or global:
 ```shell
-npm i -g npm-package-user-scripts-list
+$ npm i -g npm-package-user-scripts-list
 ```
 
 ## Usage
@@ -67,7 +67,7 @@ Object.keys(scriptCommands).map((id) => {
 
 From shell command line:
 ```shell
-npm-package-user-scripts-list
+$ npm-package-user-scripts-list
 ```
 
 Add command shortcut to `package.json`:
