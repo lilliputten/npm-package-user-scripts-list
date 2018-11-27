@@ -93,8 +93,8 @@ Available commands (for npm run -s <cmd>):
 
 ## See also
 
-- [GUI interface standalone script](https://github.com/lilliputten/npm-package-user-scripts-gui)
+- [Npm launcher](https://github.com/lilliputten/npm-launcher)
 
 <!--
-@version 2018.11.26, 19:42
+@version 2018.11.27, 20:15
 -->
